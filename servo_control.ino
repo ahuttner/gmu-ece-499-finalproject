@@ -119,7 +119,7 @@ void usbInterrupt(byte* buffer, byte nCount){
     
       //Lower
     case 'v':
-      Dxl.goalPosition(ZWheel, 0);
+      Dxl.goalPosition(ZWheel, 300);
       break;
       
     //Default to stop
