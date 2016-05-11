@@ -24,8 +24,6 @@ pos_y = 0
 #pencil state: 0: pencil raised, 1: pencil lowered
 pencil_state = 0
 
-#white_pix_count = np.count_nonzero(edges_template)
-
 while np.count_nonzero(edges_template) > 0:
         #while position is on upper left corner
         while pos_x == 0 and pos_y == 0:
@@ -147,7 +145,7 @@ while np.count_nonzero(edges_template) > 0:
                                 pos_y = 478
                                 pos_x = 639
                         else:
-                                #go to edges_template[478,638]
+                                #go to edges_template[0,0]
                                 pos_y = 0
                                 pos_x = 0
                 white_pix_count = np.count_nonzero(edges_template)
@@ -190,7 +188,7 @@ while np.count_nonzero(edges_template) > 0:
                                 pos_y = 478
                                 pos_x = 0
                         else:
-                                #go to edges_template[479,1]
+                                #go to edges_template[0,0]
                                 pos_y = 0
                                 pos_x = 0
                 white_pix_count = np.count_nonzero(edges_template)
@@ -240,7 +238,7 @@ while np.count_nonzero(edges_template) > 0:
                         elif np.count_nonzero(edges_template[pos_y:479,0]) != 0:
                                 pos_y = pos_y + 1
                         else:
-                                #go to edges_template[pos_y,1]
+                                #go to edges_template[pos_y + 1,1]
                                 pos_y = pos_y + 1
                                 pos_x = 1
                 white_pix_count = np.count_nonzero(edges_template)
@@ -290,7 +288,7 @@ while np.count_nonzero(edges_template) > 0:
                         elif np.count_nonzero(edges_template[0,pos_x:639]) != 0:
                                 pos_x = pos_x + 1
                         else:
-                                #go to edges_template[0,pos_x + 1]
+                                #go to edges_template[1,pos_x + 1]
                                 pos_y = 1
                                 pos_x = pos_x + 1
                 white_pix_count = np.count_nonzero(edges_template)
@@ -340,7 +338,7 @@ while np.count_nonzero(edges_template) > 0:
                         elif np.count_nonzero(edges_template[pos_y:479,639]) != 0:
                                 pos_y = pos_y + 1
                         else:
-                                #go to edges_template[pos_y + 1,0]
+                                #go to edges_template[pos_y + 1,638]
                                 pos_y = pos_y + 1
                                 pos_x = 638
                 white_pix_count = np.count_nonzero(edges_template)
@@ -390,7 +388,7 @@ while np.count_nonzero(edges_template) > 0:
                         elif np.count_nonzero(edges_template[479,pos_x:639]) != 0:
                                 pos_x = pos_x + 1
                         else:
-                                #go to edges_template[479,pos_x + 1]
+                                #go to edges_template[478,pos_x + 1]
                                 pos_y = 478
                                 pos_x = pos_x + 1
                 white_pix_count = np.count_nonzero(edges_template)
@@ -453,7 +451,7 @@ while np.count_nonzero(edges_template) > 0:
                         elif np.count_nonzero(edges_template[pos_y:479,pos_x]) != 0:
                                pos_y = pos_y + 1
                         else:
-                                #go to edges_template[pos_y,pos_x + 1]
+                                #go to edges_template[pos_y + 1,pos_x + 1]
                                 pos_y = pos_y + 1
                                 pos_x = pos_x + 1
                 white_pix_count = np.count_nonzero(edges_template)
@@ -462,7 +460,5 @@ while np.count_nonzero(edges_template) > 0:
                 print "pos_x: ",pos_x
                 cv2.imshow('drawing',drawing)
                 cv2.waitKey(1)
-        #white_pix_count = np.count_nonzero(edges_template)
-        #print "white_pix_count: ",white_pix_count
 cv2.imshow('drawing',drawing)
 cv2.waitKey(0)
